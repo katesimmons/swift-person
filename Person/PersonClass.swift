@@ -10,13 +10,14 @@ import Foundation
 
 class Person {
     
-    
     private var _firstname: String!
+    private var _lastname: String!
     
     
 //initialization
-    init(first:String) {
+    init(first:String, last:String) {
         self._firstname = first
+        self._lastname = last
     }
 
     
@@ -31,8 +32,17 @@ class Person {
         }
     }
     
-    var result:String {
-        return "Your name is \(_firstname)"
+    var lastName:String {
+        get {
+            return _lastname
+        }
+        set {
+            _lastname = newValue
+        }
+    }
+
+    var result: String {
+        return "Your name is \(_firstname) \(_lastname)"
     }
     
 }

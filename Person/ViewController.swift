@@ -10,12 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var person = Person(first: "Alex")
+    var person = Person(first: "Alex", last: "Scott")
 
     @IBOutlet weak var outputLabel: UILabel!
-    @IBOutlet weak var textInput: UITextField!
+    @IBOutlet weak var inputFirst: UITextField!
+    @IBOutlet weak var inputLast: UITextField!
     @IBOutlet weak var submitButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +30,13 @@ class ViewController: UIViewController {
 
     @IBAction func tapButton(sender: AnyObject) {
         
-        if let txt = textInput.text {
-            person.firstName = txt
-            outputLabel.text = person.result
-        }
+        let txt = inputFirst.text
+        let txt2 = inputLast.text
+        
+        person.firstName = txt!
+        person.lastName = txt2!
+        
+        outputLabel.text = person.result
         
     }
 
